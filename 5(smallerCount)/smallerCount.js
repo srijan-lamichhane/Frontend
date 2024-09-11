@@ -69,5 +69,7 @@ function countSmaller(nums) {
   console.log(countSmaller(nums));  
   
 
-//   Time complexity: O(n log n) 
-// Space complexity: O(n)
+//   Time complexity: O(n log n) as sorting algorithm is used. and merge sort is effecient for this problem
+// because insertion and operation is not necessary in merge sort and it saves time and space.
+
+// Space complexity: O(n) since it maintains the array equal to the size of input.

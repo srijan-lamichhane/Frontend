@@ -1,7 +1,12 @@
+// TASK 3
+//Input: arr[] = {1, 9, 3, 10, 4, 20, 2}
+// Explanation: The subsequence 1, 3, 4, 2 is the longest subsequence of consecutive elements
+// Expected Output: 4
+
 function longestConsecutiveChain(arr){
     if(arr.length === 0) return 0;
 
-    // sorting the array
+    // sorting the array and removing duplicate using set
     arr = [...new Set(arr)].sort((a,b) => a-b);
 
     let longestChain = 1;
@@ -21,5 +26,10 @@ function longestConsecutiveChain(arr){
     return longestChain;
 }
 
-let arr = [5, 4, 20, 1, 3, 2];
+let arr = [1, 9, 3, 10, 4, 20, 2];
 console.log(longestConsecutiveChain(arr)); 
+
+//Time complexity: O(nlogn) since sorting is used. while looping through the array after sorting takes O(n)
+// as each element in the array is checked once.
+
+//Space Complexity: O(n) due to set and sorted array.
