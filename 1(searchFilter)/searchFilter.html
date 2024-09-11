@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Filter</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+
+  <div class="bg-white shadow-md p-6 w-full max-w-md">
+    <h2 class="text-2xl font-bold mb-4 text-black">Search Filter</h2>
+
+    <input type="text" id="search" placeholder="Search items..."
+      class="w-full px-4 py-2 border border-gray-300 rounded mb-4">
+
+<!-- list of items -->
+    <ul id="itemList" class="space-y-2">
+      <li class="px-4 py-2 bg-gray-200 rounded">Apple</li>
+      <li class="px-4 py-2 bg-gray-200 rounded">Banana</li>
+      <li class="px-4 py-2 bg-gray-200 rounded">Orange</li>
+      <li class="px-4 py-2 bg-gray-200 rounded">Grapes</li>
+      <li class="px-4 py-2 bg-gray-200 rounded">Strawberry</li>
+      <li class="px-4 py-2 bg-gray-200 rounded">Watermelon</li>
+      <li class="px-4 py-2 bg-gray-200 rounded">Pineapple</li>
+      <li class="px-4 py-2 bg-gray-200 rounded">Mango</li>
+    </ul>
+
+  </div>
+
+  <script>
+    const search = document.getElementById('search');
+    const items = document.querySelectorAll('#itemList li');
+
+    // event listener for search input
+    search.addEventListener('input', () => {
+      const query = search.value.toLowerCase();
+
+      items.forEach(item => {
+        const itemName = item.textContent.toLowerCase();
+
+        if (itemName.includes(query)) {
+          item.style.display = ""; // show item if it matches
+        } else {
+          item.style.display = "none"; // hide item if it doesn't match
+        }
+      });
+
+    });
+
+
+  </script>
+
+</body>
+
+</html>
